@@ -1,0 +1,23 @@
+#include "User.h"
+
+#include <iostream>
+
+
+void User::setName() {
+    std::cout << "Care este numele tau? ";
+    std::cout<< std::endl;
+    std::getline(std::cin, username);
+}
+
+void User::printName() const {
+    std::cout << "Buna " << username << '\n'<<"Esti gata sa dai testul?"<< std::endl;
+}
+
+void User::addScore(int points) {
+    score += points;
+    std::cout << "Scorul tau total: " << score << std::endl;  // Optional printout
+}
+
+User::~User() {
+    std::cout << "Pa!" << std::endl;
+}
