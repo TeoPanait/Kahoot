@@ -23,7 +23,7 @@ void Game::playGame1() {
     Quiz quiz3("Ce planeta este cunoscuta drept Planeta Rosie?", "Pamant", "Marte", "Jupiter", 2);
     quizes.push_back(quiz3);
 
-    for (Quiz& quiz : quizes) {
+    for (const Quiz& quiz : quizes) {
         int correct=quiz.askQuestions();
         user.addScore(correct);
     }
@@ -43,7 +43,7 @@ void Game::playGame2() {
     Quiz quiz3("Pe ce planeta suntem?", "Pamant", "Marte", "Jupiter", 1);
     quizes.push_back(quiz3);
 
-    for (Quiz& quiz : quizes) {
+    for (const Quiz& quiz : quizes) {
         int correct=quiz.askQuestions();
         user.addScore(correct);
     }

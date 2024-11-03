@@ -17,16 +17,15 @@ int Quiz::askQuestions() const {
 
 
     std::cout << "Care este raspunsul tau?" << std::endl;
-    int guess;
+    int guess=-1;
     std::cin >> guess;
 
 
     if (guess == Aa.RightAnswer) {
         std::cout << std::endl << "Corect!" << std::endl;
         return Qa.QuestionScore;
-    } else {
-        std::cout << std::endl << "Gresit!" << std::endl;
-        std::cout << "Raspuns corect = " << Aa.RightAnswer << "." << std::endl;
-        return 0;
     }
+    std::cout << std::endl << "Gresit!" << std::endl;
+    std::cout << "Raspuns corect = " << Aa.RightAnswer << "." << std::endl;
+    return 0;
 }
