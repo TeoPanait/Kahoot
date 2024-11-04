@@ -21,3 +21,8 @@ void User::addScore(int points) {
 User::~User() {
     std::cout << "Pa!" << std::endl;
 }
+
+std::ostream& operator<<(std::ostream& os, const User& user) {
+    os << user.username << " " << user.score;
+    return os;
+}

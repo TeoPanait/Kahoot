@@ -11,7 +11,7 @@ int main() {
     newGame.playGame1();
     Game copiedGame = newGame;
     copiedGame.playGame2();
-
+    std::cout<<myUser;
 
     return 0;
 }
