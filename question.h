@@ -13,6 +13,8 @@ public:
     question()=default;
     explicit question(std::string question);
     friend class Quiz;
+
+    friend std::ostream& operator<<(std::ostream& os, const question& q);
 };
 
 

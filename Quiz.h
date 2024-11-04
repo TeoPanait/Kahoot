@@ -19,6 +19,8 @@ public:
     friend class Game;
     friend class Answer;
     friend class question;
+
+    friend std::ostream &operator<<(std::ostream &os, const Quiz &q);
 };
 
 

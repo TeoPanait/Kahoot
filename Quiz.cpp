@@ -29,3 +29,8 @@ int Quiz::askQuestions() const {
     std::cout << "Raspuns corect = " << Aa.RightAnswer << "." << std::endl;
     return 0;
 }
+
+std::ostream &operator<<(std::ostream &os, const Quiz &q) {
+    os << q.Qa <<" "<< q.Aa << std::endl;
+    return os;
+}

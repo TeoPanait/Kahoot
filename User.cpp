@@ -23,6 +23,6 @@ User::~User() {
 }
 
 std::ostream& operator<<(std::ostream& os, const User& user) {
-    os << user.username << " " << user.score;
+    os << user.username << " " << user.score << std::endl;
     return os;
 }

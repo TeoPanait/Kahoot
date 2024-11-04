@@ -17,6 +17,8 @@ public:
     Answer(std::string a1, std::string a2, std::string a3, int rightAnswer);
 
     friend class Quiz;
+
+    friend std::ostream& operator<<(std::ostream& os, const Answer& answer);
 };
 
 

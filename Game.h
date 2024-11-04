@@ -19,6 +19,8 @@ public:
 
     void playGame1();
     void playGame2();
+
+    friend std::ostream& operator<<(std::ostream& os, const Game& game);
 };
 
 
