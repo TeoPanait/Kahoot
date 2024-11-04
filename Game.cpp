@@ -51,8 +51,11 @@ void Game::playGame2() {
 }
 
 std::ostream & operator<<(::std::ostream &os, const Game &game) {
+    os << game.user << "\n";
+    os << "Quizzes:\n";
     for (const auto& quiz : game.quizes) {
         os << quiz << "\n";
     }
     return os;
 }
+   
