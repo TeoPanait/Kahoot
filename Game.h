@@ -8,7 +8,7 @@
 class Game {
     question Q;
     std::vector<Quiz> quizes;
-   // int gameId{};
+
     User &user;
     int total{};
 
