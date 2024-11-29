@@ -10,7 +10,8 @@ void User::setName() {
 }
 
 void User::printName() const {
-    std::cout << "Buna " << username << '\n'<<"Esti gata sa dai testul?"<< std::endl;
+    std::cout << "Buna " << username << '\n'<<"Ce test ai vrea sa dai?"<< std::endl;
+
 }
 
 void User::addScore(int points) {

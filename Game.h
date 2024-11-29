@@ -6,21 +6,17 @@
 #include "Quiz.h"
 
 class Game {
-    question Q;
-    std::vector<Quiz> quizes;
-
+    //SingleChoiceQuestion Sq;
+    std::vector<std::unique_ptr<Quiz>> quizes;
     User &user;
-    int total{};
 
 public:
     explicit Game(User &user);
-    Game(const Game& other);
     ~Game();
-
+    void addQuiz(std::unique_ptr<Quiz>quiz);
     void playGame1();
     void playGame2();
 
-    friend std::ostream& operator<<(std::ostream& os, const Game& game);
 };
 
 
