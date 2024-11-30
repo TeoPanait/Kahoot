@@ -54,8 +54,8 @@ add_executable(${PROJECT_NAME}
         Game.h
         User.cpp
         User.h
-        SingleChoiceQuestion.cpp
-        SingleChoiceQuestion.h
+        SingleChoiceQuiz.cpp
+        SingleChoiceQuiz.h
 )
 
 include(cmake/CompilerFlags.cmake)

@@ -2,21 +2,21 @@
 #define QUESTION_H
 
 #include <string>
-#include <utility>
+
 
 class question {
-protected:
     std::string QuestionText;
-    int QuestionScore;
-
+    const int QuestionScore = 10;
 
 public:
-    explicit question(std::string question): QuestionText(std::move(question)), QuestionScore(10) {}
-    virtual ~question()=default;
-    friend class Quiz;
+    explicit question(std::string text);
+    friend class SingleChoiceQuiz;
 
-   // friend std::ostream& operator<<(std::ostream& os, const question& q);
+    friend std::ostream& operator<<(std::ostream& os, const question& q);
 };
+
+
+
 
 
 

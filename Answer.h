@@ -2,10 +2,6 @@
 #define ANSWER_H
 #include <string>
 
-
-
-
-
 class Answer {
         std::string Answer1;
         std::string Answer2;
@@ -19,7 +15,7 @@ class Answer {
         void SetValues(std::string a1, std::string a2, std::string a3, int rightAnswer);
 
         friend class Quiz;
-        friend class SingleChoiceQuestion;
+        friend class SingleChoiceQuiz;
 
     friend std::ostream& operator<<(std::ostream& os, const Answer& answer);
     };

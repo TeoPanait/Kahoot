@@ -1,7 +1,3 @@
-//
-// Created by LauraP on 10/29/2024.
-//
-
 #include "Answer.h"
 
 #include <iostream>

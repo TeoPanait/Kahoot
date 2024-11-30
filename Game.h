@@ -1,19 +1,18 @@
 #ifndef GAME_H
 #define GAME_H
-#include<iostream>
+#include <memory>
 #include <vector>
 #include "User.h"
-#include "Quiz.h"
+#include "SingleChoiceQuiz.h"
 
 class Game {
-    //SingleChoiceQuestion Sq;
-    std::vector<std::unique_ptr<Quiz>> quizes;
+    std::vector<std::unique_ptr<SingleChoiceQuiz>> quizes;
     User &user;
 
 public:
     explicit Game(User &user);
     ~Game();
-    void addQuiz(std::unique_ptr<Quiz>quiz);
+    void addQuiz(std::unique_ptr<SingleChoiceQuiz>quiz);
     void playGame1();
     void playGame2();
 
