@@ -22,19 +22,20 @@ int SingleChoiceQuiz::askQuestions() const {
     if (guess == Aa.RightAnswer) {
         std::cout << std::endl << "Corect!" << std::endl;
         return Sq.QuestionScore;
-    }
-    if(guess != Aa.RightAnswer) {
+    }else{
         std::cout << "Mai incearca"<< std::endl;
         std::cin >> guess;
         if (guess == Aa.RightAnswer) {
-            std::cout << std::endl << "Corect!" << std::endl;
-            return Sq.QuestionScore-5;
+
+                std::cout << std::endl << "Corect!" << std::endl;
+                return Sq.QuestionScore-5;
+            }else {
+                std::cout << std::endl << "Gresit!" << std::endl;
+                std::cout << "Raspuns corect = " << Aa.RightAnswer << "." << std::endl;
+            }
 
         }
 
-    } else {
-        std::cout << std::endl << "Gresit!" << std::endl;
-        std::cout << "Raspuns corect = " << Aa.RightAnswer << "." << std::endl;
-    }
+
     return 0;
 }
