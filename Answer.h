@@ -12,7 +12,7 @@ class Answer {
     public:
         Answer(std::string a1, std::string a2, std::string a3, int rightAnswer);
 
-        void SetValues(std::string a1, std::string a2, std::string a3, int rightAnswer);
+        //void SetValues(std::string a1, std::string a2, std::string a3, int rightAnswer);
 
         friend class Quiz;
         friend class SingleChoiceQuiz;
