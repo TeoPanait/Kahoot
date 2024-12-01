@@ -10,7 +10,10 @@ class question {
 
 public:
     explicit question(std::string text);
+    friend class Quiz;
     friend class SingleChoiceQuiz;
+    friend class MultipleChoiceQuiz;
+    friend class FillBlanksQuiz;
 
     friend std::ostream& operator<<(std::ostream& os, const question& q);
 };

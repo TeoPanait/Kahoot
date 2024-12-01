@@ -12,7 +12,6 @@ int main() {
     std::cout<< "1. Matematica"<< std::endl;
     std::cout<< "2. Capitalele europei"<<std::endl;
 
-
     std::cin >> gameChoice;
 
     Game newGame(myUser);
