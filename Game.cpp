@@ -89,12 +89,12 @@ void Game::playGame2() {
 
 void Game::details() const {
     std::cout<< std::endl<< "Tipurile de intrebari ale acestui test : "<< std::endl;
-    for (const auto& quiz : quizes) {
+    for (const auto& const quiz : quizes) {
         if(auto* scq=dynamic_cast<SingleChoiceQuiz*>(quiz.get())) {
             std::cout << "Intrebare cu un singur raspuns id: "<< scq->getDetails() << "\n";
-        } else if (auto* mcq=dynamic_cast<MultipleChoiceQuiz*>(quiz.get())) {
+        } else if (auto* const mcq=dynamic_cast<MultipleChoiceQuiz*>(quiz.get())) {
             std::cout << "Intrebare cu raspuns multiplu id:"<< mcq->getDetails() << "\n";
-        }else if(auto* fbq=dynamic_cast<FillBlanksQuiz*>(quiz.get())) {
+        }else if(auto* const fbq=dynamic_cast<FillBlanksQuiz*>(quiz.get())) {
             std::cout << "Completare propozitii id: " <<  fbq->getDetails() << "\n";
         }
 
