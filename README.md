@@ -62,3 +62,5 @@ Un fel de kahoot cu quiz uri cu o instanta de tip user
 ## Resurse
 - adăugați trimiteri către resursele externe care v-au ajutat sau pe care le-ați folosit
 - https://www.geeksforgeeks.org/quiz-game-in-c/
+- https://stackoverflow.com/questions/313970/how-to-convert-an-instance-of-stdstring-to-lower-case
+- https://medium.com/@thisis-Shitanshu/how-to-handle-input-correctly-in-c-using-std-cin-clear-and-std-cin-ignore-9da2033c4b4e
