@@ -98,19 +98,25 @@ void Game::playGame2() {
 }
 
 void Game::details() const {
-    std::cout<< std::endl<< "Tipurile de intrebari ale acestui test : "<< std::endl;
-    for (const auto& quiz : quizes) {
-        if(dynamic_pointer_cast<SingleChoiceQuiz>(quiz)) {
-            std::cout << "Intrebare cu un singur raspuns id: "<< quiz->getDetails() << "\n";
-        } else if (dynamic_pointer_cast<MultipleChoiceQuiz>(quiz)) {
-            std::cout << "Intrebare cu raspuns multiplu id:"<< quiz->getDetails() << "\n";
-        }else if(dynamic_pointer_cast<FillBlanksQuiz>(quiz)) {
-            std::cout << "Completare propozitii id: " <<  quiz->getDetails() << "\n";
+    try{
+        bool q=false;
+        std::cout<< std::endl<< "Tipurile de intrebari ale acestui test : "<< std::endl;
+        for (const auto& quiz : quizes) {
+            if(dynamic_pointer_cast<SingleChoiceQuiz>(quiz)) {
+                std::cout << "Intrebare cu un singur raspuns id: "<< quiz->getDetails() << "\n";
+                q=true;
+            } else if (dynamic_pointer_cast<MultipleChoiceQuiz>(quiz)) {
+                std::cout << "Intrebare cu raspuns multiplu id:"<< quiz->getDetails() << "\n";
+                q=true;
+            }else if(dynamic_pointer_cast<FillBlanksQuiz>(quiz)) {
+                std::cout << "Completare propozitii id: " <<  quiz->getDetails() << "\n";
+                q=true;
+            }
+            if(!q)throw AplException("Nu stiu ce tip de quiz este.");
         }
-    else {
-            throw std::invalid_argument("No se ha podido construir quiz");
-        }
-
-   }
-
+    }catch ( const AplException &e) {
+        std::cout << e.what() << std::endl;
+    }
 }
+
+

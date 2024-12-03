@@ -20,12 +20,14 @@ class AnswerException final : public AplException {
     public:
     explicit AnswerException(std::string message) : AplException(std::move(message)) {}
     ~AnswerException() noexcept override = default;
+    [[nodiscard]] const char* what() const noexcept override { return message.c_str();}
 };
 
 class NameException final : public AplException {
 public:
     explicit NameException(std::string message) : AplException(std::move(message)) {}
     ~NameException() noexcept override = default;
+    [[nodiscard]] const char* what() const noexcept override { return message.c_str();}
 };
 
 #endif //EXECPTION_H
