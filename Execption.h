@@ -34,5 +34,5 @@ class QuizException final: public AplException {
     public:
     explicit QuizException(std::string message) : AplException(std::move(message)) {}
     ~QuizException() noexcept override = default;
-}
+};
 #endif //EXECPTION_H
