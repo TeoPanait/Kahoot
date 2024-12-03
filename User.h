@@ -19,6 +19,7 @@ public:
     void printName() const;
     void addScore(int points);
 
+    friend std::ostream& operator<<(std::ostream& os, const User& user);
 };
 
 
