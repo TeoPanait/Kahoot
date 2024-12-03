@@ -60,6 +60,7 @@ add_executable(${PROJECT_NAME}
         MultipleChoiceQuiz.h
         FillBlanksQuiz.cpp
         FillBlanksQuiz.h
+        Execption.h
 )
 
 include(cmake/CompilerFlags.cmake)

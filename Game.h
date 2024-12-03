@@ -8,7 +8,7 @@
 #include "FillBlanksQuiz.h"
 
 class Game {
-    std::vector<std::unique_ptr<Quiz>> quizes;
+    std::vector<std::shared_ptr<Quiz>> quizes;
     User &user;
     // MultipleChoiceQuiz MCQ;
     // Quiz* q=dynamic_cast<Quiz*>(&MCQ);
@@ -16,7 +16,7 @@ class Game {
 public:
     explicit Game(User &user);
     ~Game();
-    void addQuiz(std::unique_ptr<Quiz>quiz);
+    void addQuiz(const std::shared_ptr<Quiz> &quiz);
     void playGame1();
     void playGame2();
     void details() const;
