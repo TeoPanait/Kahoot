@@ -8,8 +8,9 @@ class Quiz {
 protected:
     question Qa;
     Answer Aa;
+    static int idgame;
 public:
-
+    static int getIdGame();
     Quiz(const std::string &text, const std::string &a1, const std::string &a2, const std::string &a3, const  std::vector<int>&  RightAnswer);
     virtual ~Quiz() = default;
     virtual int getDetails() const = 0;

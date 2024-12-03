@@ -22,10 +22,10 @@ class AnswerException final : public AplException {
     ~AnswerException() noexcept override = default;
 };
 
-class NoAnswerException final : public AplException {
+class NameException final : public AplException {
 public:
-    explicit NoAnswerException(std::string message) : AplException(std::move(message)) {}
-    ~NoAnswerException() noexcept override = default;
+    explicit NameException(std::string message) : AplException(std::move(message)) {}
+    ~NameException() noexcept override = default;
 };
 
 #endif //EXECPTION_H

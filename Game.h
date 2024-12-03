@@ -10,8 +10,6 @@
 class Game {
     std::vector<std::shared_ptr<Quiz>> quizes;
     User &user;
-    // MultipleChoiceQuiz MCQ;
-    // Quiz* q=dynamic_cast<Quiz*>(&MCQ);
 
 public:
     explicit Game(User &user);

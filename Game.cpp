@@ -50,8 +50,8 @@ void Game::playGame1() {
     std:: cout<< "Vrei sa vezi detaliile testului? "<< std::endl;
     std::string ans;
     std::getline(std::cin, ans);
-    std::transform(ans.begin(), ans.end(), ans.begin(),
-                   [](unsigned char c) { return std::tolower(c); });
+    std::ranges::transform(ans, ans.begin(),
+                           [](unsigned char c) { return std::tolower(c); });
     if(ans == "da") {
         try {
             details();
@@ -59,7 +59,7 @@ void Game::playGame1() {
             std::cout << e.what() << std::endl;
         }
     }
-
+    std::cout<< Quiz::getIdGame() << std::endl;
     quizes.clear();
 }
 
@@ -80,15 +80,15 @@ void Game::playGame2() {
     addQuiz(std::make_shared<FillBlanksQuiz>("Capitala Italiei este .....", "roma"));
     for (const auto& quiz : quizes) {
         int correct = quiz->askQuestions();
-        quiz->display(); //tip de raspuns
+        quiz->display();
         user.addScore(correct);
     }
 
     std:: cout<< "Vrei sa vezi detaliile testului? "<< std::endl;
     std::string ans;
     std::getline(std::cin, ans);
-    std::transform(ans.begin(), ans.end(), ans.begin(),
-                   [](unsigned char c) { return std::tolower(c); });
+    std::ranges::transform(ans, ans.begin(),
+                           [](unsigned char c) { return std::tolower(c); });
     if(ans == "da") {
         details();
     }

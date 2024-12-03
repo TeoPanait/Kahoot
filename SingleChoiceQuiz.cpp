@@ -1,7 +1,6 @@
 #include "SingleChoiceQuiz.h"
 #include <iostream>
 #include <limits>
-
 #include "Execption.h"
 
 SingleChoiceQuiz::SingleChoiceQuiz(const std::string &text, const std::string &a1, const std::string &a2, const std::string &a3, const std::vector<int>& RightAnswer)
@@ -17,32 +16,17 @@ int SingleChoiceQuiz::askQuestions() const {
         try {
 
             std::cout << "Care este raspunsul tau?\n" ;
-            std::string input;
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::getline(std::cin, input);
-            if(input.empty()) {
-                throw NoAnswerException("Input gol. Te rog sa introduci un numar.");
-            }
-
-
-            try {
-                try { guess=std::stoi(input); }catch (...){throw AnswerException("Input invalid. Te rog sa introduci un numar.");}
+            std::cin>>guess;
                if (std::cin.fail()) {
                     throw AnswerException("Input invalid. Te rog sa introduci un numar.");
                 }
-
+            break;
             }catch (const AnswerException &e) {
                     std::cin.clear();
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                     std::cout << e.what() << std::endl;
                 }
-                break;
 
-            }catch (const NoAnswerException& e) {
-                std::cin.clear();
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                std::cout << e.what() << std::endl;
-            }
 
         }
 

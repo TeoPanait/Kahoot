@@ -1,12 +1,31 @@
 #include "User.h"
 
+#include <algorithm>
 #include <iostream>
+#include <limits>
+#include <sstream>
+
+#include "Execption.h"
 
 
 void User::setName() {
-    std::cout << "Care este numele tau? ";
-    std::cout<< std::endl;
-    std::getline(std::cin, username);
+    while(true) {
+        try {
+            std::cout << "Care este numele tau? ";
+            std::cout<< std::endl;
+            std::getline(std::cin, username);
+            std::istringstream iss(username);
+            int temp;
+            if (iss >> temp) {
+                throw NameException("Numele nu poate fi un numar. Te rog sa introduci un nume valid.");
+            }
+            break;
+        }catch (NameException& e){
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << e.what() << std::endl;
+        }
+    }
 }
 
 void User::printName() const {
