@@ -10,7 +10,7 @@ public:
     ~FillBlanksQuiz() override= default;
     [[nodiscard]] int askQuestions() const override;
     void display()const override;
-    int getDetails()const override;
+    [[nodiscard]] int getDetails()const override;
     friend class Game;
 };
 

@@ -3,7 +3,9 @@
 #include <iostream>
 #include <limits>
 #include <memory>
-
+#include "SingleChoiceQuiz.h"
+#include "MultipleChoiceQuiz.h"
+#include "FillBlanksQuiz.h"
 #include "Execption.h"
 
 Game::Game(User &user) : user(user) {

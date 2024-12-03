@@ -1,6 +1,5 @@
 #include "MultipleChoiceQuiz.h"
 #include <iostream>
-#include <limits>
 #include <ostream>
 #include <sstream>
 

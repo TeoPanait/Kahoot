@@ -2,10 +2,9 @@
 #define GAME_H
 #include <memory>
 #include <vector>
+
+#include "Quiz.h"
 #include "User.h"
-#include "SingleChoiceQuiz.h"
-#include "MultipleChoiceQuiz.h"
-#include "FillBlanksQuiz.h"
 
 class Game {
     std::vector<std::shared_ptr<Quiz>> quizes;
