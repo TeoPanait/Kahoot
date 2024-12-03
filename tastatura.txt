@@ -1,7 +1,10 @@
 Teo
 1
 2
-2
-2
 3
-1
+2 3
+isoscel
+1 2
+2 3
+180
+diametru
