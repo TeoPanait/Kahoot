@@ -112,9 +112,9 @@ void Game::details() const {
                 std::cout << "Completare propozitii id: " <<  quiz->getDetails() << "\n";
                 q=true;
             }
-            if(!q)throw AplException("Nu stiu ce tip de quiz este.");
+            if(!q)throw QuizException("Nu stiu ce tip de quiz este.");
         }
-    }catch ( const AplException &e) {
+    }catch ( const QuizException &e) {
         std::cout << e.what() << std::endl;
     }
 }
