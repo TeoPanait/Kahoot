@@ -9,8 +9,7 @@
 #include "Execption.h"
 #include "QuizFac.h"
 
-Game::Game(User &user) : user(user) {
-}
+Game::Game(User &user) : user(user) {}
 
 void Game::addQuiz(const std::shared_ptr<Quiz> &quiz) {
     quizes.push_back(quiz);
