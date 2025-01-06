@@ -3,11 +3,10 @@
 #include <algorithm>
 #include <iostream>
 #include <limits>
-#include <utility>
 #include <vector>
 
-FillBlanksQuiz::FillBlanksQuiz(const std::string& text, std::string  correct) :
-    Quiz( text,"", "","", {}), correct(std::move(correct)) {}
+FillBlanksQuiz::FillBlanksQuiz(const std::string& text, const std::string&  correct) :
+    Quiz( text,"", "","", {}), correct(correct) {}
 
 int FillBlanksQuiz::askQuestions() const {
     std::cout << std::endl;

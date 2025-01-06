@@ -14,7 +14,7 @@ public:
     friend class SingleChoiceQuiz;
     friend class MultipleChoiceQuiz;
     friend class FillBlanksQuiz;
-
+    virtual ~question()=default;
     friend std::ostream& operator<<(std::ostream& os, const question& q);
 };
 

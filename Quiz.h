@@ -20,6 +20,7 @@ public:
     friend class SingleChoiceQuiz;
     friend class MultipleChoiceQuiz;
     friend class FillBlanksQuiz;
+    friend class QuizFac;
 };
 
 

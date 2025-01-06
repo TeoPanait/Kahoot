@@ -50,6 +50,8 @@ int SingleChoiceQuiz::askQuestions() const {
     return 0;
 }
 
+
+
 void SingleChoiceQuiz::display() const {
     std::cout<< "Raspuns simplu" << std::endl;
 }

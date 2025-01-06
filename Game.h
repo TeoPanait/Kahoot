@@ -6,6 +6,8 @@
 #include "Quiz.h"
 #include "User.h"
 
+
+
 class Game {
     std::vector<std::shared_ptr<Quiz>> quizes;
     User &user;

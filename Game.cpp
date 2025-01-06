@@ -7,6 +7,7 @@
 #include "MultipleChoiceQuiz.h"
 #include "FillBlanksQuiz.h"
 #include "Execption.h"
+#include "QuizFac.h"
 
 Game::Game(User &user) : user(user) {
 }
@@ -19,30 +20,30 @@ Game::~Game() {
 }
 void Game::playGame1() {
     try {
-        addQuiz(std::make_shared<SingleChoiceQuiz>("Cat fac 3*5?", "15", "3", "10", std::vector<int>{1}));
-        addQuiz(std::make_shared<SingleChoiceQuiz>("Cat fac 4*5?", "15", "20", "10", std::vector<int>{2}));
-        addQuiz(std::make_shared<SingleChoiceQuiz>("Cat fac 6*8?", "46", "42", "48", std::vector<int>{3}));
+        addQuiz(QuizFac::createSingleChoiceQuiz("Cat fac 3*5?", "15", "3", "10", std::vector<int>{1}));
+        addQuiz(QuizFac::createSingleChoiceQuiz("Cat fac 4*5?", "15", "20", "10", std::vector<int>{2}));
+        addQuiz(QuizFac::createSingleChoiceQuiz("Cat fac 6*8?", "46", "42", "48", std::vector<int>{3}));
     } catch (const AnswerException &e) {
         std::cout << e.what() << "\n";
     }
-    addQuiz(std::make_shared<MultipleChoiceQuiz>("Ce proprietati are un triunghi dreptunghic?",
+    addQuiz(QuizFac::createMultipleChoiceQuiz("Ce proprietati are un triunghi dreptunghic?",
         "are un unghi de 30 de grade",
         "are un unghi de 90 de grade",
         "ip^2=c1^2+c2^2",
         std::vector<int>{2, 3}));
-    addQuiz(std::make_shared<FillBlanksQuiz>("Un triunghi cu doua laturi egale se numeste .....", "isoscel"));
-    addQuiz(std::make_shared<MultipleChoiceQuiz>("Care sunt proprietatile unui patrat?",
+    addQuiz(QuizFac::createFillBlanksQuiz("Un triunghi cu doua laturi egale se numeste .....", "isoscel"));
+    addQuiz(QuizFac::createMultipleChoiceQuiz("Care sunt proprietatile unui patrat?",
         "Are 4 laturi egale",
         "Are diagonale congruente si perpendiculare",
         "Are un unghi de 120 de grade",
         std::vector<int>{1, 2}));
-    addQuiz(std::make_shared<MultipleChoiceQuiz>("Cum recunosti un trapez dreptunghic?",
+    addQuiz(QuizFac::createMultipleChoiceQuiz("Cum recunosti un trapez dreptunghic?",
         "Are o pereche de laturi paralele",
         "Are doua unghiuri drepte",
         "Are toate unghiurile egale",
         std::vector<int>{1, 2}));
-    addQuiz(std::make_shared<FillBlanksQuiz>("Suma unghiurilor intr-un triunghi este ..... grade.", "180"));
-    addQuiz(std::make_shared<FillBlanksQuiz>("O dreapta care imparte un cerc in doua parti egale se numeste .....",
+    addQuiz(QuizFac::createFillBlanksQuiz("Suma unghiurilor intr-un triunghi este ..... grade.", "180"));
+    addQuiz(QuizFac::createFillBlanksQuiz("O dreapta care imparte un cerc in doua parti egale se numeste .....",
         "diametru"));
     for (const auto& quiz : quizes) {
         int correct= quiz->askQuestions();
@@ -66,20 +67,20 @@ void Game::playGame1() {
 }
 
 void Game::playGame2() {
-    addQuiz(std::make_shared<SingleChoiceQuiz>("Care este capitala Austriei?",
+    addQuiz(QuizFac::createSingleChoiceQuiz("Care este capitala Austriei?",
         "Viena", "Venetia", "Germania", std::vector<int>{1}));
-    addQuiz(std::make_shared<SingleChoiceQuiz>("Care este capitala Suediei?",
+    addQuiz(QuizFac::createSingleChoiceQuiz("Care este capitala Suediei?",
         "Copenhaga", "Stockholm", "Londra", std::vector<int>{2}));
-    addQuiz(std::make_shared<SingleChoiceQuiz>("Care este capitala Spaniei?",
+    addQuiz(QuizFac::createSingleChoiceQuiz("Care este capitala Spaniei?",
         "Barcelona","Valencia","Madrid",std::vector<int>{3}));
-    addQuiz(std::make_shared<MultipleChoiceQuiz>(
+    addQuiz(QuizFac::createMultipleChoiceQuiz(
     "Care dintre urmatoarele orase sunt capitale europene?",
     "Roma", "Berlin", "Lyon", std::vector<int>{1, 2}));
-    addQuiz(std::make_shared<MultipleChoiceQuiz>(
-        "Ce capitale apartin țarilor nordice?",
+    addQuiz(QuizFac::createMultipleChoiceQuiz(
+        "Ce capitale apartin tarilor nordice?",
         "Oslo", "Stockholm", "Amsterdam", std::vector<int>{1, 2}));
-    addQuiz(std::make_shared<FillBlanksQuiz>("Capitala Frantei este .....", "paris"));
-    addQuiz(std::make_shared<FillBlanksQuiz>("Capitala Italiei este .....", "roma"));
+    addQuiz(QuizFac::createFillBlanksQuiz("Capitala Frantei este .....", "paris"));
+    addQuiz(QuizFac::createFillBlanksQuiz("Capitala Italiei este .....", "roma"));
     for (const auto& quiz : quizes) {
         int correct = quiz->askQuestions();
         quiz->display();
@@ -94,7 +95,7 @@ void Game::playGame2() {
     if(ans == "da") {
         details();
     }
-
+    std::cout<< Quiz::getIdGame() << std::endl;
     quizes.clear();
 
 }

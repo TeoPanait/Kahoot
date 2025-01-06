@@ -6,7 +6,7 @@
 class FillBlanksQuiz : public Quiz {
     std::string correct;
 public:
-    FillBlanksQuiz(const std::string& text, std::string  correct);
+    FillBlanksQuiz(const std::string& text, const std::string&  correct);
     ~FillBlanksQuiz() override= default;
     [[nodiscard]] int askQuestions() const override;
     void display()const override;
