@@ -1,16 +1,15 @@
 #include "Quiz.h"
 
-
-
-
+// Returns the unique identifier of the quiz
 int Quiz::getIdGame() {
     return idgame;
 }
 
-Quiz::Quiz(const std::string &text, const std::string &a1, const std::string &a2, const std::string &a3, const  std::vector<int>& RightAnswer) :
-    Qa(text), Aa(a1, a2, a3, RightAnswer){
-    idgame++;
+// Constructor for initializing questions and answers
+Quiz::Quiz(const std::string &text, const std::string &a1, const std::string &a2, const std::string &a3, const std::vector<int>& RightAnswer)
+    : Qa(text), Aa(a1, a2, a3, RightAnswer) {
+    idgame++;  // Increment the unique identifier
 }
 
-
-int Quiz::idgame=0;
+// Static variable initialization for the game ID
+int Quiz::idgame = 0;

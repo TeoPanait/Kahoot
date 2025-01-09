@@ -1,7 +1,7 @@
 # Kahoot
 
 ## Descriere proiect
-Un fel de kahoot cu quiz uri cu o instanta de tip user
+Un joc stil trivia cu mai multe tipuri de teste. Testele contin intrebari cu moduri diferite de raspuns, ex: simplu, multiplu. De asemenea avem un user care isi poate introduce un nume, apoi calculandu-i-se un scor dupa terminarea testului. Pentru raspunsuri corecte se primeste un bonus. La sfarsit user poate afla ce tipuri de raspunsuri au fost in test si scorul cel mai mare pe care l-a obtinut pentru un raspuns.
 
 ## Milestone #0
 
