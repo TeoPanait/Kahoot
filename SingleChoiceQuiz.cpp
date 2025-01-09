@@ -52,3 +52,4 @@ int SingleChoiceQuiz::askQuestions() const {
     }
 
     return 0; // Returns 0 points if the answer is incorrect
+}
