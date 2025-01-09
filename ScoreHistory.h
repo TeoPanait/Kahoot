@@ -37,9 +37,7 @@ public:
         std::cout << "Cel mai bun scor: " << getBestScore() << std::endl;
     }
 
-    [[nodiscard]] size_t getGamesPlayed() const {
-        return scores.size();
-    }
+
 };
 
 
