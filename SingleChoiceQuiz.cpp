@@ -53,3 +53,11 @@ int SingleChoiceQuiz::askQuestions() const {
 
     return 0; // Returns 0 points if the answer is incorrect
 }
+void SingleChoiceQuiz::display() const {
+    std::cout << "Raspuns simplu" << std::endl;  // Display the quiz type
+}
+
+// Function that returns details about the quiz
+int SingleChoiceQuiz::getDetails() const {
+    return 1;  // Specific details for the single choice quiz quiz
+}
