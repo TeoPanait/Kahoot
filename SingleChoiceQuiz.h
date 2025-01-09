@@ -3,8 +3,6 @@
 
 #include "Quiz.h"
 #include "Answer.h"
-#include "question.h"
-
 
 class SingleChoiceQuiz: public Quiz{
 

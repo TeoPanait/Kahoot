@@ -33,13 +33,45 @@ void User::printName() const {
 
 }
 
-void User::addScore(int points) {
+void User::addScore(int points, bool isMGame) {
     score += points;
+
+    if(CurrentStrategy) {
+        int bonus= CurrentStrategy->calculateBonus(points);
+        score += bonus;
+        points += bonus;
+        if(bonus >0 ) {
+            std:: cout <<"bonus:"<< bonus << std::endl;
+        }
+    }
+    if(isMGame) {
+        MHistory.addScore(points);
+    }else {
+        CHistory.addScore(points);
+    }
     std::cout << "Scorul tau total: " << score << std::endl;  // Optional printout
 }
 
 User::~User() {
+    delete CurrentStrategy;
     std::cout << "Pa!" << std::endl;
+}
+
+void User::setStrategy(bool isMGame) {
+    delete CurrentStrategy;
+    if(isMGame) {
+        CurrentStrategy= new MathQuizStrategy;
+    }else {
+        CurrentStrategy= new CapitalsQuizStrategy;
+    }
+    CurrentStrategy-> displayInstructions();
+}
+
+void User::GameHistory(bool isMGame) {
+    if(isMGame) {
+        MHistory.displayHistory();
+
+    }else { CHistory.displayHistory(); }
 }
 
 std::ostream& operator<<(std::ostream& os, const User& user) {

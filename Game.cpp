@@ -18,6 +18,7 @@ Game::~Game() {
     std::cout << "\n";
 }
 void Game::playGame1() {
+    user.setStrategy(true);
     try {
         addQuiz(QuizFac::createSingleChoiceQuiz("Cat fac 3*5?", "15", "3", "10", std::vector<int>{1}));
         addQuiz(QuizFac::createSingleChoiceQuiz("Cat fac 4*5?", "15", "20", "10", std::vector<int>{2}));
@@ -47,7 +48,7 @@ void Game::playGame1() {
     for (const auto& quiz : quizes) {
         int correct= quiz->askQuestions();
         quiz->display();
-        user.addScore(correct);
+        user.addScore(correct, false);
     }
     std:: cout<< "Vrei sa vezi detaliile testului? "<< std::endl;
     std::string ans;
@@ -62,10 +63,12 @@ void Game::playGame1() {
         }
     }
     std::cout<< Quiz::getIdGame() << std::endl;
+    user.GameHistory(false);
     quizes.clear();
 }
 
 void Game::playGame2() {
+    user.setStrategy(false);
     addQuiz(QuizFac::createSingleChoiceQuiz("Care este capitala Austriei?",
         "Viena", "Venetia", "Germania", std::vector<int>{1}));
     addQuiz(QuizFac::createSingleChoiceQuiz("Care este capitala Suediei?",
@@ -83,7 +86,7 @@ void Game::playGame2() {
     for (const auto& quiz : quizes) {
         int correct = quiz->askQuestions();
         quiz->display();
-        user.addScore(correct);
+        user.addScore(correct, false);
     }
 
     std:: cout<< "Vrei sa vezi detaliile testului? "<< std::endl;
@@ -95,6 +98,7 @@ void Game::playGame2() {
         details();
     }
     std::cout<< Quiz::getIdGame() << std::endl;
+    user.GameHistory(false);
     quizes.clear();
 
 }

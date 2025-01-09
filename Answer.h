@@ -3,8 +3,9 @@
 #include <string>
 #include <vector>
 
+
 class Answer {
-        std::string Answer1;
+       std::string Answer1;
         std::string Answer2;
         std::string Answer3;
         std::vector<int> RightAnswer;
@@ -17,8 +18,12 @@ class Answer {
     friend class MultipleChoiceQuiz;
     friend class FillBlanksQuiz;
 
+
     friend std::ostream& operator<<(std::ostream& os, const Answer& answer);
     };
+
+
+
 
 
 #endif //ANSWER_H

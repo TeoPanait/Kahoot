@@ -63,6 +63,8 @@ add_executable(${PROJECT_NAME}
         Execption.h
         QuizFac.h
         QuizFac.cpp
+        ScoreHistory.h
+        Strategy.h
 )
 
 include(cmake/CompilerFlags.cmake)
